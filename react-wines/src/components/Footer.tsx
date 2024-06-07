@@ -3,7 +3,7 @@ export default function Footer() {
 
     return (
         <footer className="bg-orange-200 text-sky-950 py-3 text-center mt-20">
-            <p>&copy; {currentYear} - Krasimir Dramaliev</p>
+            <p>&copy; {currentYear} - Krasimir Dramaliev </p>
         </footer>
     );
 }

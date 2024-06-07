@@ -5,21 +5,23 @@ import './index.css'
 import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Dashboard from './components/Dashboard.tsx'
 import WinesList from './components/WinesList.tsx'
+import WineDetails from './components/WineDetails.tsx'
 
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-    children: [
-      { index: true, element: <Navigate replace to={'/dashboard'} /> },
-      { path: '/dashboard', element: <Dashboard /> },
-      { path: '/wines', element: <WinesList /> },
-    ]
-  }
+	{
+		path: '/',
+		element: <App />,
+		children: [
+			{ index: true, element: <Navigate replace to={'/dashboard'} /> },
+			{ path: '/dashboard', element: <Dashboard /> },
+			{ path: '/wines', element: <WinesList /> },
+			{ path: '/wines/:id', element: <WineDetails />},
+		]
+	}
 ])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
+	<React.StrictMode>
+		<RouterProvider router={router} />
+	</React.StrictMode>,
 )

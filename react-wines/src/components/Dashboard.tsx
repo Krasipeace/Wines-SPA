@@ -2,14 +2,15 @@ import { useEffect, useRef, useState } from "react";
 import { Wine } from "../types/wine";
 import { Link } from "react-router-dom";
 
+const apiURL = import.meta.env.VITE_API_URL;
+
 export default function Dashboard() {
 	const [wines, setWines] = useState<Wine[]>([]);
-
 	const fetched = useRef(false);
 
 	useEffect(() => {
 		if (!fetched.current) {
-			fetch('http://localhost:3000/wines?_limit=4').then(res => {
+			fetch(`${apiURL}/wines?_limit=4`).then(res => {
 				return res.json();
 			}).then(data => {
 				setWines(data);
