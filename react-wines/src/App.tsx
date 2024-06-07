@@ -1,6 +1,7 @@
 import { ChangeEvent, useState } from "react"
 import { Wine } from "./types/wine";
 import { WINES } from "./data/mock-wines";
+import WineDetails from "./components/WineDetails";
 
 
 export default function App() {
@@ -36,27 +37,7 @@ export default function App() {
         ))}
       </ul>
 
-      {selectedWine &&
-        <>
-          <h2 className="text-2xl">Details</h2>
-          <div>
-            <span className="font-bold">ID:</span> {selectedWine.id}
-          </div>
-          <div className="space-x-2">
-            <span className="font-bold">Name:</span>
-            <span className="uppercase">{selectedWine.name}</span>
-          </div>
-          <div className="flex flex-col gap-2 mt-3 border-t">
-            <label>Wine Name:</label>
-            <input
-              type="text"
-              placeholder="Write name of wine here..."
-              className="border border-purple-950 rounded-3xl p-2 w-1/4"
-              value={selectedWine.name}
-              onChange={handleNameChange}
-            />
-          </div>
-        </>}
+      <WineDetails wine={selectedWine} onChangeName={handleNameChange} />
     </div>
   )
 }
