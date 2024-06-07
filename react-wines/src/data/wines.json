@@ -1,0 +1,40 @@
+{
+  "wines": [
+    {
+      "name": "Cabernet Sauvignon",
+      "id": "12"
+    },
+    {
+      "name": "Cabernet Franc",
+      "id": "13"
+    },
+    {
+      "name": "Sauvignon Blanc",
+      "id": "14"
+    },
+    {
+      "name": "Melnik",
+      "id": "15"
+    },
+    {
+      "id": "16",
+      "name": "Chardonnay"
+    },
+    {
+      "id": "17",
+      "name": "Merlot"
+    },
+    {
+      "name": "Syrah",
+      "id": "18"
+    },
+    {
+      "id": "19",
+      "name": "Muscat Bianco"
+    },
+    {
+      "id": "20",
+      "name": "Muscat Ottonel"
+    }
+  ]
+}
