@@ -1,9 +1,11 @@
-# Managing Wines app
+# Wines - React SPA
 
 CRUD API about managing wines, build with React, TailwindCSS and Vite.
 
 ## Tech Stack
 
-- React
-- TailWindCSS
-- Vite
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [TailWindCSS](https://tailwindcss.com/docs/guides/vite)
+- [json-server](https://www.npmjs.com/package/json-server?activeTab=readme)
+- [React Router](https://reactrouter.com/en/main)

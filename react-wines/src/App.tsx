@@ -1,12 +1,22 @@
-import { ChangeEvent, useState } from "react"
+import { ChangeEvent, useEffect, useRef, useState } from "react"
 import { Wine } from "./types/wine";
-import { WINES } from "./data/mock-wines";
 import WineDetails from "./components/WineDetails";
 
-
 export default function App() {
-  const [wines, setWines] = useState<Wine[]>(WINES);
+  const [wines, setWines] = useState<Wine[]>([]);
   const [selectedWineId, setSelectedWineId] = useState<number | null>(null);
+  const fetched = useRef(false);
+
+  useEffect(() => {
+    if (!fetched.current) {
+      fetch('http://localhost:3000/wines').then(res => {
+        return res.json();
+      }).then(data => {
+        setWines(data);
+      })
+      fetched.current = true;
+    }
+  }, [])
 
   const selectedWine = wines.find(wine => wine.id === selectedWineId);
 
