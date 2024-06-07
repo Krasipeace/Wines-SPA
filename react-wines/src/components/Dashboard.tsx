@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { Wine } from "../types/wine";
 import { Link } from "react-router-dom";
+import { useMessages } from "../context/MessageContext";
 
 const apiURL = import.meta.env.VITE_API_URL;
 
 export default function Dashboard() {
 	const [wines, setWines] = useState<Wine[]>([]);
+	const { addMessage } = useMessages();
 	const fetched = useRef(false);
 
 	useEffect(() => {
@@ -14,10 +16,11 @@ export default function Dashboard() {
 				return res.json();
 			}).then(data => {
 				setWines(data);
+				addMessage("Top Wines loaded.");
 			})
 			fetched.current = true;
 		}
-	}, [])
+	}, [addMessage])
 
 	return (
 		<div className="flex flex-col gap-3">

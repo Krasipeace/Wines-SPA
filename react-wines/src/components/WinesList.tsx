@@ -1,12 +1,14 @@
 import { useState, useRef, useEffect } from "react";
 import { Wine } from "../types/wine";
 import { Link } from "react-router-dom";
+import { useMessages } from "../context/MessageContext";
 
 const apiURL = import.meta.env.VITE_API_URL;
 
 export default function WinesList() {
 	const [wines, setWines] = useState<Wine[]>([]);
 	const fetched = useRef(false);
+	const { addMessage } = useMessages();
 
 	useEffect(() => {
 		if (!fetched.current) {
@@ -14,10 +16,11 @@ export default function WinesList() {
 				return res.json();
 			}).then(data => {
 				setWines(data);
+				addMessage("Wines Loaded.");
 			})
 			fetched.current = true;
 		}
-	}, [])
+	}, [addMessage])
 
 	return (
 		<>

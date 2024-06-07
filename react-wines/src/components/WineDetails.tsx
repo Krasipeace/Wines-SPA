@@ -1,6 +1,7 @@
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { Wine } from "../types/wine";
 import { useParams } from "react-router-dom";
+import { useMessages } from "../context/MessageContext";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -8,6 +9,7 @@ export default function WineDetails() {
 	const [wine, setWine] = useState<Wine | null>(null);
 	const params = useParams();
 	const fetched = useRef(false);
+	const { addMessage } = useMessages();
 
 	useEffect(() => {
 		if (!fetched.current) {
@@ -15,10 +17,11 @@ export default function WineDetails() {
 				return res.json();
 			}).then(data => {
 				setWine(data);
+				addMessage(`Wine ${data.name} loaded.`);
 			})
 			fetched.current = true;
 		}
-	}, [params.id])
+	}, [params.id, addMessage])
 
 	if (!wine) return null;
 
