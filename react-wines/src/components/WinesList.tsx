@@ -22,6 +22,22 @@ export default function WinesList() {
 		}
 	}, [addMessage])
 
+	async function deleteWine(wine: Wine) {
+		try {
+			const response = await fetch(`${apiURL}/wines/${wine.id}`, {
+				method: "DELETE"
+			});
+
+			if (!response.ok) throw new Error("Request failed" + response.statusText);
+
+			setWines(prevWines => prevWines.filter(w => w.id !== wine.id));
+			addMessage(`Wine ${wine.name} deleted`);
+		} catch (error) {
+			console.log(error);
+			addMessage("Failed to delete Wine");
+		}
+	}
+
 	return (
 		<>
 			<div className="flex gap-3">
@@ -31,8 +47,22 @@ export default function WinesList() {
 			<ul className="flex flex-col gap-2 my-3">
 				{wines.map(wine => (
 					<Link to={`/wines/${wine.id}`} key={wine.id} className="flex cursor-pointer">
-						<span className="bg-red-950 text-white rounded-l p-2">{wine.id}</span>
-						<span className="p-2 bg-red-100 rounded-r w-full">{wine.name}</span>
+						<span className="bg-red-950 text-white rounded-l p-2">
+							{wine.id}
+						</span>
+						<div className="p-2 bg-red-100 rounded-r w-full flex justify-between">
+							<span className="">
+								{wine.name}
+							</span>
+							<span
+								onClick={(e) => {
+									e.preventDefault();
+									deleteWine(wine);
+								}}
+								className="bg-red-500 px-1 cursor-pointer text-pink-200 font-bold">
+								X
+							</span>
+						</div>
 					</Link>
 				))}
 			</ul>

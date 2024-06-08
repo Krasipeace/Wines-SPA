@@ -18,7 +18,7 @@ export default function WineDetails() {
 				return res.json();
 			}).then(data => {
 				setWine(data);
-				addMessage(`Wine ${data.name} loaded.`);
+				addMessage(`Wine ${data.name} loaded`);
 			})
 			fetched.current = true;
 		}
