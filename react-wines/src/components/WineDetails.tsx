@@ -1,7 +1,8 @@
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Wine } from "../types/wine";
 import { useParams } from "react-router-dom";
 import { useMessages } from "../context/MessageContext";
+import WineForm from "./WineForm";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -25,28 +26,6 @@ export default function WineDetails() {
 
 	if (!wine) return null;
 
-	const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
-		event.preventDefault();
-
-		const formData = new FormData(event.currentTarget);
-		const url = `${apiUrl}/wines/${wine.id}`;
-
-		try {
-			const response = await fetch(url, {
-				method: "PUT",
-				body: JSON.stringify({ name: formData.get("name") })
-			});
-
-			if (!response.ok) throw new Error("Request failed: " + response.statusText);
-
-			const data = await response.json();
-			addMessage(`Wine ${wine.name} updated to ${data.name}`);
-			setWine(data);
-		} catch (error) {
-			console.log("Failed to update wine");
-		}
-	}
-
 	return (
 		<>
 			<h2 className="text-2xl">Details</h2>
@@ -58,21 +37,7 @@ export default function WineDetails() {
 				<span className="uppercase">{wine.name}</span>
 			</div>
 			<div className="flex flex-col gap-2 mt-3 border-t">
-				<form onSubmit={onSubmit}>
-					<label>Wine Name:</label>
-					<div className="flex gap-3">
-						<input
-							type="text"
-							name="name"
-							placeholder="Write name of wine here..."
-							className="border border-purple-950 rounded-3xl p-2 w-2/3"
-							defaultValue={wine.name}
-						/>
-						<button type="submit" className="btn">
-							Submit
-						</button>
-					</div>
-				</form>
+				<WineForm wine={wine} setWine={setWine} />
 			</div>
 		</>
 	)

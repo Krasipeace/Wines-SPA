@@ -29,12 +29,16 @@
       "id": "18"
     },
     {
-      "name": "Muscat Bianco 23'",
+      "name": "Muscat Bianco",
       "id": "19"
     },
     {
       "id": "20",
       "name": "Muscat Ottonel"
+    },
+    {
+      "id": "c995",
+      "name": "Mavrud"
     }
   ]
 }

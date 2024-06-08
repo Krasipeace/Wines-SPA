@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard.tsx'
 import WinesList from './components/WinesList.tsx'
 import WineDetails from './components/WineDetails.tsx'
 import { MessageProvider } from './context/MessageContext.tsx'
+import WineForm from './components/WineForm.tsx'
 
 const router = createBrowserRouter([
 	{
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
 			{ path: '/dashboard', element: <Dashboard /> },
 			{ path: '/wines', element: <WinesList /> },
 			{ path: '/wines/:id', element: <WineDetails /> },
+			{ path: '/wines/create', element: <WineForm /> },
 		]
 	}
 ])

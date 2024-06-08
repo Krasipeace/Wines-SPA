@@ -24,7 +24,10 @@ export default function WinesList() {
 
 	return (
 		<>
-			<h2 className="text-2xl">My Wines</h2>
+			<div className="flex gap-3">
+				<h2 className="text-2xl">My Wines</h2>
+				<Link to="/wines/create" className="btn">Create new Wine</Link>
+			</div>
 			<ul className="flex flex-col gap-2 my-3">
 				{wines.map(wine => (
 					<Link to={`/wines/${wine.id}`} key={wine.id} className="flex cursor-pointer">
