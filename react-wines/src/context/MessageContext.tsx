@@ -1,7 +1,7 @@
 import { ReactNode, createContext, useCallback, useContext, useState } from "react";
-import { MessageContextType } from "../types/MessageContextType";
+import { Message } from "../types/message";
 
-const MessageContext = createContext<MessageContextType | undefined>(undefined);
+const MessageContext = createContext<Message | undefined>(undefined);
 
 const MessageProvider = ({ children }: { children: ReactNode }) => {
     const [messages, setMessages] = useState<string[]>([]);

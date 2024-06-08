@@ -12,7 +12,7 @@ export default function Dashboard() {
 
 	useEffect(() => {
 		if (!fetched.current) {
-			fetch(`${apiURL}/wines?_limit=4`).then(res => {
+			fetch(`${apiURL}/wines?_limit=3`).then(res => {
 				return res.json();
 			}).then(data => {
 				setWines(data);

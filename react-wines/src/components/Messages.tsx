@@ -7,7 +7,7 @@ export default function Messages() {
         <div>
             <div className="flex gap-3">
                 <h2 className="text-2xl">Messages</h2>
-                <button onClick={clearMessages} className="p-2 bg-purple-600 text-emerald-200 rounded-lg">
+                <button onClick={clearMessages} className="btn">
                     Clear Messages
                 </button>
             </div>
