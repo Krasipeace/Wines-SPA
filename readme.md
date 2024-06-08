@@ -11,7 +11,15 @@ Basic CRUD App about managing wines, build with React, TailwindCSS and Vite.
 - [React Router](https://reactrouter.com/en/main)
 
 
-### Commands
+### Get Started
 
-- npx json-server src/data/wines.json -> start json-server
-- npm run dev -> start react app
+- Clone or download repository:
+	`gh repo clone Krasipeace/Wines-SPA`
+- Go into project folder
+	`cd ~/react-wines`
+- Install app dependencies
+	`npm install`
+- Start app 
+	`npm run dev`
+- Start json-server with the app data
+	`npx json-server src/data/wines.json`
