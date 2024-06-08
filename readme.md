@@ -1,3 +1,5 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/krasipeace/wines-spa/badge)](https://www.codefactor.io/repository/github/krasipeace/wines-spa)
+
 # Wines - React SPA
 
 Basic CRUD App about managing wines, build with React, TailwindCSS and Vite.
@@ -14,12 +16,12 @@ Basic CRUD App about managing wines, build with React, TailwindCSS and Vite.
 ### Get Started
 
 - Clone or download repository:
-	`gh repo clone Krasipeace/Wines-SPA`
+	- `gh repo clone Krasipeace/Wines-SPA`
 - Go into project folder
-	`cd ~/react-wines`
+	- `cd ~/react-wines`
 - Install app dependencies
-	`npm install`
+	- `npm install`
 - Start app 
-	`npm run dev`
+	- `npm run dev`
 - Start json-server with the app data
-	`npx json-server src/data/wines.json`
+	- `npx json-server src/data/wines.json`
