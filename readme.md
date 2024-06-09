@@ -16,12 +16,22 @@ Basic CRUD App about managing wines, build with React, TailwindCSS and Vite.
 ### Get Started
 
 - Clone or download repository:
-	- `gh repo clone Krasipeace/Wines-SPA`
+	```bash
+	gh repo clone Krasipeace/Wines-SPA
+ 	```
 - Go into project folder
-	- `cd ~/react-wines`
+	```bash
+	cd ~/react-wines
+ 	```
 - Install app dependencies
-	- `npm install`
-- Start app 
-	- `npm run dev`
+	```bash
+	npm install
+ 	```
+- Start app
+	```bash 
+	npm run dev
+ 	```
 - Start json-server with the app data
-	- `npx json-server src/data/wines.json`
+	```bash
+	npx json-server src/data/wines.json
+	```
