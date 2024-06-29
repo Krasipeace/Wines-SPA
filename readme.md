@@ -4,7 +4,7 @@
 
 Basic CRUD App about managing wines, build with React, TailwindCSS and Vite.
 
-## Tech Stack
+## Tech Stack / Libraries / Packages
 
 - [React](https://react.dev/)
 - [Vite](https://vitejs.dev/)
@@ -18,10 +18,6 @@ Basic CRUD App about managing wines, build with React, TailwindCSS and Vite.
 - Clone or download repository:
 	```bash
 	gh repo clone Krasipeace/Wines-SPA
- 	```
-- Go into project folder
-	```bash
-	cd ~/react-wines
  	```
 - Install app dependencies
 	```bash
