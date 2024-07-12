@@ -1,4 +1,4 @@
-[![CodeFactor](https://www.codefactor.io/repository/github/krasipeace/wines-spa/badge)](https://www.codefactor.io/repository/github/krasipeace/wines-spa)
+[![CodeFactor](https://www.codefactor.io/repository/github/krasipeace/wines-spa/badge)](https://www.codefactor.io/repository/github/krasipeace/wines-spa) [![CI](https://github.com/Krasipeace/Wines-SPA/actions/workflows/workflow.yml/badge.svg)](https://github.com/Krasipeace/Wines-SPA/actions/workflows/workflow.yml)
 
 # Wines - React SPA
 
