@@ -23,6 +23,8 @@ Basic CRUD App about managing wines, build with React, TailwindCSS and Vite.
 	```bash
 	npm install
  	```
+- Create .env file with the contents from .env.example
+
 - Start app
 	```bash 
 	npm run dev
