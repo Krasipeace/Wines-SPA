@@ -1,4 +1,4 @@
-name: CI
+name: BUILD
 
 on:
   push:
@@ -24,9 +24,10 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Run JSON server
-      run: npx json-server --watch src/data/wines.json --port 3001 &
-      continue-on-error: true
+    - name: Start JSON server
+      run: |
+        npx json-server --watch src/data/wines.json --port 3000 &
+        sleep 30
 
     - name: Build the app
       run: npm run build
